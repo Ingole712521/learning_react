@@ -21,7 +21,7 @@ function App() {
       </div>
     );
   }
-
+  console.log(data);
   return (
     <>
       <div className="text-white grid grid-cols-3 gap-4">
@@ -44,5 +44,5 @@ function App() {
     </>
   );
 }
-  
+
 export default App;
