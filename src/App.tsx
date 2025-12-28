@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import "./App.css";
 import useProduct from "./component/Product";
+import Toggle from "./component/useState/Toggle";
+import Form from "./component/useState/Form";
 
 function App() {
   const { data, isPending, isError, error } = useProduct();
@@ -24,6 +26,9 @@ function App() {
   return (
     <>
       <div className="text-white grid grid-cols-3 gap-4">
+        <Toggle />
+        <Form />
+
         {data.map((product: any) => {
           return (
             <div
