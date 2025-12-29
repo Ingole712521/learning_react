@@ -9,6 +9,7 @@ import Count from "./component/Props/Count";
 import ParentName from "./component/Props/Name/ParentName";
 import ButtonParent from "./component/Props/PassingFunction/ButtonParent";
 import ToggleParent from "./component/Props/toggle/ToggleParent";
+import LeapParent from "./component/Props/leapProps/leapParent";
 
 function App() {
   const { data, isPending, isError, error } = useProduct();
@@ -38,6 +39,7 @@ function App() {
         <ParentName/>
         <ButtonParent/>
         <ToggleParent/>
+        <LeapParent/>
 
 
 
