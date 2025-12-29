@@ -10,6 +10,7 @@ import ParentName from "./component/Props/Name/ParentName";
 import ButtonParent from "./component/Props/PassingFunction/ButtonParent";
 import ToggleParent from "./component/Props/toggle/ToggleParent";
 import LeapParent from "./component/Props/leapProps/leapParent";
+import FormParent from "./component/Props/Form/FormParent";
 
 function App() {
   const { data, isPending, isError, error } = useProduct();
@@ -40,6 +41,7 @@ function App() {
         <ButtonParent/>
         <ToggleParent/>
         <LeapParent/>
+        <FormParent/>
 
 
 
