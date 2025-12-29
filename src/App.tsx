@@ -29,7 +29,7 @@ function App() {
         <Toggle />
         <Form />
 
-        {data.map((product: any) => {
+        {/* {data.map((product: any) => {
           return (
             <div
               key={product.id}
@@ -43,7 +43,7 @@ function App() {
               <h2 className="mt-2 text-center">{product.title}</h2>
             </div>
           );
-        })}
+        })} */}
       </div>
     </>
   );
