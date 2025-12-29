@@ -4,6 +4,11 @@ import "./App.css";
 import useProduct from "./component/Product";
 import Toggle from "./component/useState/Toggle";
 import Form from "./component/useState/Form";
+import Product from "./component/Props/Product";
+import Count from "./component/Props/Count";
+import ParentName from "./component/Props/Name/ParentName";
+import ButtonParent from "./component/Props/PassingFunction/ButtonParent";
+import ToggleParent from "./component/Props/toggle/ToggleParent";
 
 function App() {
   const { data, isPending, isError, error } = useProduct();
@@ -26,8 +31,16 @@ function App() {
   return (
     <>
       <div className="text-white grid grid-cols-3 gap-4">
-        <Toggle />
-        <Form />
+        {/* <Toggle /> */}
+        {/* <Form /> */}
+
+        <Product />
+        <ParentName/>
+        <ButtonParent/>
+        <ToggleParent/>
+
+
+
 
         {/* {data.map((product: any) => {
           return (
