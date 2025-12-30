@@ -11,6 +11,21 @@ import ButtonParent from "./component/Props/PassingFunction/ButtonParent";
 import ToggleParent from "./component/Props/toggle/ToggleParent";
 import LeapParent from "./component/Props/leapProps/leapParent";
 import FormParent from "./component/Props/Form/FormParent";
+import { NameContext } from './component/Context/starting/MainFile';
+import Receiver from "./component/Context/starting/Receiver";
+// import { ThemeContext } from "./component/Context/Theme/createContext";
+// import ThemeButton from "./component/Context/Theme/ThemeButton";
+import ProviderContext from "./component/Context/Increment/ProviderContext";
+import Increment from "./component/Context/Increment/Increment";
+import { AuthProvider } from "./component/Context/AuthLogin/AuthProvider";
+import LoginPage from "./component/Context/AuthLogin/LoginPage";
+import { ThemeContext } from "./component/Context/Theme/createContext";
+import ThemeButton from "./component/Context/Theme/ThemeButton";
+import { ThemeProvider } from "./component/Context/Theme/provideContext";
+import Calculation from "./component/useMemo/Calculation";
+import ReduckerComponent from "./component/Reducer/Syntax/ReduckerComponent";
+import FormComponent from "./component/Reducer/Company/FormComponent";
+import Todo from "./component/Reducer/TodoApp/Todo";
 
 function App() {
   const { data, isPending, isError, error } = useProduct();
@@ -37,13 +52,37 @@ function App() {
         {/* <Form /> */}
 
         <Product />
-        <ParentName/>
-        <ButtonParent/>
-        <ToggleParent/>
-        <LeapParent/>
-        <FormParent/>
+        <ParentName />
+        <ButtonParent />
+        <ToggleParent />
+        <LeapParent />
+        <FormParent />
+
+        <NameContext.Provider value="text from the main file ">
+          <Receiver />
+        </NameContext.Provider>
 
 
+
+
+        <ProviderContext >
+          <Increment />
+        </ProviderContext>
+
+        <ThemeProvider>
+          <ThemeButton />
+        </ThemeProvider>
+
+        <AuthProvider>
+          <LoginPage />
+        </AuthProvider>
+
+<Calculation/>
+
+
+<ReduckerComponent/>
+<FormComponent/>
+<Todo/>
 
 
         {/* {data.map((product: any) => {

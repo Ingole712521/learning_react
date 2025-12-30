@@ -12,17 +12,17 @@ const ToggleChild: React.FC<toggleProps> = ({ isOnline, toggleStatus }) => {
 
     return (
         <>
-        
-        <div className='flex flex-col gap-4'>
 
-            <button onClick={toggleStatus} className='uppercase  text-white'>
-                toggleStatus
-            </button>
+            <div className='flex flex-col gap-4'>
 
-            <p>{isOnline ? "Online" : "Offline"}</p>
+                <button onClick={toggleStatus} className='uppercase  text-white'>
+                    toggleStatus
+                </button>
+
+                <p>{isOnline ? "Online" : "Offline"}</p>
 
 
-        </div>
+            </div>
         </>
     )
 }
