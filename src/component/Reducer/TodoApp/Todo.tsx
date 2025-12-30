@@ -73,7 +73,7 @@ const Todo = () => {
                                         onClick={() => dispatch({ type: "TOGGLE_TODO", id: todo.id })}
                                         style={{
                                             padding: '4px 8px',
-                                            backgroundColor: todo.completed ? '#ff9800' : '#2196f3',
+                                            backgroundColor: todo.completed ? 'black' : 'orange',
                                             color: 'white',
                                             border: 'none',
                                             borderRadius: '4px',
@@ -107,7 +107,7 @@ const Todo = () => {
                 display: 'flex', 
                 justifyContent: 'space-between',
                 padding: '10px',
-                backgroundColor: '#f5f5f5',
+                backgroundColor: 'black',
                 borderRadius: '4px'
             }}>
                 <span>Total: {todos.length}</span>
@@ -124,7 +124,7 @@ const Todo = () => {
                     }}
                     style={{
                         padding: '6px 12px',
-                        backgroundColor: '#e3f2fd',
+                        backgroundColor: 'blue',
                         border: '1px solid #2196f3',
                         borderRadius: '4px',
                         cursor: 'pointer'
@@ -139,7 +139,7 @@ const Todo = () => {
                     }}
                     style={{
                         padding: '6px 12px',
-                        backgroundColor: '#e8f5e9',
+                        backgroundColor: 'lightgreen',
                         border: '1px solid #4CAF50',
                         borderRadius: '4px',
                         cursor: 'pointer'
@@ -150,8 +150,9 @@ const Todo = () => {
                 <button 
                     onClick={() => dispatch({ type: "ADD_TODO", text: "Test Todo" })}
                     style={{
+                        color: "black",
                         padding: '6px 12px',
-                        backgroundColor: '#fff3e0',
+                        backgroundColor: 'lightyellow',
                         border: '1px solid #ff9800',
                         borderRadius: '4px',
                         cursor: 'pointer'
