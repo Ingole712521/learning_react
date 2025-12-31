@@ -4,7 +4,7 @@ import { AuthContext } from './createContext'
 
 
 
-export const roviderContext = ({ children }: { children: React.ReactNode }) => {
+export const ProviderContext = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<string | null>(null)
 
     const login = (name: string) => {
@@ -24,10 +24,10 @@ export const roviderContext = ({ children }: { children: React.ReactNode }) => {
 }
 
 
-
-export const authContext = ()  =>{
+export function useAuth() {
     const context = useContext(AuthContext);
-    if(!context){
-        throw new Error("UseAuth Must be inside aithProvider")
+    if (context === undefined) {
+        throw new Error("useAuth must be used within an AuthProvider");
     }
+    return context;
 }
