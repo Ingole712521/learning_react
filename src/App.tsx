@@ -1,26 +1,30 @@
-import React, { useContext } from "react";
 import {
-  RouterAuthContext,
   RouterAuthProvider,
 } from "./component/Router/RouterAuth";
-import { Route, Routes } from "react-router";
+import { Route, Routes, Navigate } from "react-router";
 import Home from "./component/Router/Home";
 import Navigatin from "./component/Router/Navigatin";
 import LoginPage from "./component/Context/AuthContent/LoginPage";
+import { ProviderContext } from "./component/Context/AuthContent/providerContext";
+import ProtectedRoute from "./component/Router/ProtectedRoute";
 
 const App = () => {
-  const isAuth = useContext(RouterAuthContext);
-
   return (
     <RouterAuthProvider>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {isAuth?.isAuth ? (
-          <Route path="/navigate" element={<Navigatin />} />
-        ) : (
+      <ProviderContext>
+        <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
-        )}
-      </Routes>
+          <Route 
+            path="/navigate" 
+            element={
+              <ProtectedRoute>
+                <Navigatin />
+              </ProtectedRoute>
+            } 
+          />
+        </Routes>
+      </ProviderContext>
     </RouterAuthProvider>
   );
 };

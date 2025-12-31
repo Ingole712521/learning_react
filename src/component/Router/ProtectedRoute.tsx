@@ -1,13 +1,16 @@
 import React, { useContext } from 'react'
-import { RouterAuthContext, RouterAuthProvider } from './RouterAuth'
+import { RouterAuthContext } from './RouterAuth'
+import { Navigate } from 'react-router'
 
 const ProtectedRoute = ({children} : {children : React.ReactNode}) => {
 
     const isAuth = useContext(RouterAuthContext)
-    console.log(isAuth);
-  return (
-    <div>ProtectedRoute</div>
-  )
+    
+    if (!isAuth?.isAuth) {
+        return <Navigate to="/login" replace />
+    }
+    
+    return <>{children}</>
 }
 
 export default ProtectedRoute
